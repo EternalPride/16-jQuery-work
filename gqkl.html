@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+
+
+           *{
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+			ul{
+				list-style: none;
+			}
+			li{
+				float: left;
+				border: 1px solid black;
+				width: 100px;
+				height: 70px;
+				text-align: center;
+				line-height: 50px;
+				position: relative;
+				z-index: 3;
+				overflow:hidden;
+				color: blueviolet;
+				background-color: darkcyan;
+			}
+			span{
+				background-color: chartreuse;
+				top: 70px;
+				width: 150px;
+				height: 70px;
+				position: absolute;
+				margin-left: -40px;	
+				z-index: -1;
+				display: block;		
+				}
+		</style>
+		<script src="js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="nav">
+			<ul>
+				<li>
+				哈哈
+				<span></span>
+				</li>
+				<li>
+				哈哈
+				<span></span>
+				</li>
+				<li>
+				哈哈
+				<span></span>
+				</li>
+				<li>
+				哈哈
+				<span></span>
+				</li>
+				<li>
+				哈哈
+				<span></span>
+				</li>
+				<li>
+				哈哈
+				<span></span>
+				</li>
+				<li>
+				哈哈
+				<span></span>
+				</li>
+			</ul>
+		</div>
+
+	</body>
+	<script>
+		$(function(){
+			$('li').mouseenter(function(){
+		$(this).find('span').animate({top:'0px'});
+	})
+	$('li').mouseleave(function(){
+		$(this).find('span').stop(true).animate({top:'70px'});
+	})
+	
+    var flag=true;
+	$(document).keydown(function(e){
+		var code=e.keyCode
+		if(flag)
+		{
+			if(code>=49 && code<=57)
+			{
+				$('#nav li').eq(code-49).mouseenter()
+			}
+			flag=false;
+		}
+	})
+	$(document).keyup(function(e){
+		flag=true;
+		$('#nav li').mouseleave()
+	})
+		})
+	
+
+	</script>
+</html>

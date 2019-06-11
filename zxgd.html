@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+		<style type="text/css">
+	*{margin:0; padding:0;}
+     ul,li{list-style: none;}
+            #box{ width: 500px; height:350px; overflow:hidden; }
+            #box img{
+            	height: 100%;
+            	width: 100%;
+            }
+		</style>
+	</head>
+	<body>
+		<div id="box">
+             <ul id="hr">
+			      <li><img src="img/1.jpg"></li>
+			      <li><img src="img/2.jpg"></li>
+			      <li><img src="img/4.jpg" ></li>
+             </ul>
+             <ul id="hr1"></ul>
+		</div>      
+	</body>
+	<script type="text/javascript">
+	    var box=document.getElementById("box");
+	    var l1=document.getElementById("hr");
+	    var l2=document.getElementById("hr1");
+	    l2.innerHTML=l1.innerHTML;
+	    function scrollup(){
+	        if(box.scrollTop>=l1.offsetHeight){ 
+	            box.scrollTop=0;
+	        }else{
+	            box.scrollTop++;
+	        }
+	    }
+	    var scrollMove=setInterval(scrollup,30);
+	    box.onmouseover=function(){
+	        clearInterval(scrollMove)
+	    }
+	
+	    box.onmouseout=function(){
+	        scrollMove=setInterval(scrollup,30);
+	    }
+     </script>
+</html>

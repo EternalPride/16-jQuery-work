@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script type="text/javascript" src="js/jquery-1.12.4.js" ></script>
+</head>
+<style>
+  *{ margin: 0px; padding: 0px;}
+  li{ list-style: none;}
+  .hr{ width: 850px; height:150px; overflow: hidden; margin:50px auto; }
+  .hr ul{ width: 850px; height:150px;}
+  .hr ul li{ float: left; width: 200px; height: 150px; display: block;}
+ img{width: 200px;height: 150px;}
+</style>
+<body>
+<div class="hr">
+<ul>
+  <li><img src="img/1.jpg"/></li>
+  <li><img src="img/2.jpg"/></li>
+  <li><img src="img/3.jpeg"/></li>
+  <li><img src="img/4.jpg"/></li>
+  <li><img src="img/5.jpg" /></li>
+  
+</div>
+<script>
+ function scroll(){
+ $(".hr ul").animate({"margin-left":"-110px"},function(){
+   $(".hr ul li:eq(0)").appendTo($(".hr ul"))
+   $(".hr ul").css({"margin-left":0})
+ })
+ }
+  setInterval(scroll,1000)
+</script>
+</body>
+</html>
